@@ -46,10 +46,9 @@ class App extends React.Component{
       .then(res => res.json())
       .then(newtoy => {
         console.log(newtoy)
-        let removed = this.state.toyCollection.map(toy => toy.id === newtoy.id ? newtoy : toy)
-        // this.state.toyCollection.splice(toy.id, 1, newtoy)
+        let updated = this.state.toyCollection.map(toy => toy.id === newtoy.id ? newtoy : toy)
         this.setState({
-          toyCollection: removed
+          toyCollection: updated
         })
       })  
   }
@@ -80,7 +79,7 @@ class App extends React.Component{
       .then(res => res.json())
       .then(toy => {
         this.setState({
-          toyCollection: this.state.toyCollection.push(toy)
+          toyCollection: [...this.state.toyCollection, toy]
         })
       })  
   }

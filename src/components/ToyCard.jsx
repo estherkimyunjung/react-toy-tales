@@ -7,7 +7,7 @@ class ToyCard extends Component {
     return (
       <div className="card">
         <h2>{name}</h2>
-        <img src={image} alt="{/* Toy's Name */}" className="toy-avatar" />
+        <img src={image} alt={name} className="toy-avatar" />
         <p>{likes} Likes </p>
         <button onClick={() => this.props.addLike(this.props.toy)} className="like-btn">Like {'<3'}</button>
         <button onClick={() => this.props.deleteToy(this.props.toy)} className="del-btn">Donate to GoodWill</button>
